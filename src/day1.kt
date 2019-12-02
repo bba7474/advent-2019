@@ -8,7 +8,7 @@ fun main() {
         totalFuelRequired += calculateFuelRequired(moduleMass.toDouble())
     }
 
-    println("Total fuel required is..... $totalFuelRequired")
+    println("Total fuel required is... $totalFuelRequired")
 }
 
 fun calculateFuelRequired(mass: Double): Double {
