@@ -5,9 +5,16 @@ fun main() {
     var totalFuelRequired = 0.0
 
     for (moduleMass in moduleMasses) {
-        val fuelRequired = floor(moduleMass / 3.0) - 2
-        totalFuelRequired += fuelRequired
+        totalFuelRequired += calculateFuelRequired(moduleMass.toDouble())
     }
 
     println("Total fuel required is..... $totalFuelRequired")
+}
+
+fun calculateFuelRequired(mass: Double): Double {
+    val required = floor(mass.div(3)) - 2
+    if (required <= 0) {
+        return 0.0
+    }
+    return required + calculateFuelRequired(required)
 }
