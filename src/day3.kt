@@ -10,7 +10,7 @@ fun main() {
     val intersectionPoints = coordsOfWire1.intersect(coordsOfWire2).toMutableSet()
     intersectionPoints.remove(Pair(0, 0))
 
-    val shortestManhattanIntersectionDistance = intersectionPoints.map { p -> p.first.absoluteValue + p.second.absoluteValue }.min()
+    val shortestManhattanIntersectionDistance = intersectionPoints.map { p -> coordsOfWire1.indexOf(p) + coordsOfWire2.indexOf(p) }.min()
 
     print("Shortest Manhattan distance of an intersection is... $shortestManhattanIntersectionDistance")
 }
